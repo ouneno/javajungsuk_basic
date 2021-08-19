@@ -1,0 +1,48 @@
+다형성
+- 조상 타입 참조 변수로 자손 타입 객체를 다루는 것
+
+class TV{
+	boolean power;
+	int channel;
+	
+	void power();
+	void channelUp();
+	void channelDown();
+}
+
+class smartTv extends Tv {
+	String text;
+	void caption();
+}
+
+class TV = 부모클래스 / 기능 5개
+class smartTv = 자식클래스 / 기능 2개
+상속화에 의하여 자식클래스는 부모클래스의 특성을 물려받는다.
+class smartTv의 기능은 총 7개가 된다.
+
+다형성이란 이 때 TV t = new SmartTv(); 가 가능한 것
+타입이 불일치함에도 가능한 이유는 다형성에 의거한다.
+
+Tv클래스의 리모콘, SmartTv클래스의 리모콘이 따로 있다고 치면
+SmartTv의 리모콘으로 Tv의 리모콘을 다룰 수 있는 것 
+
+조상 타입 참조변수(Tv)로 자손타입객체(SmartTV)를 다룬다고 보면 된다.
+조상 j = 자손 z
+다형성의 장점
+1. 7개의 기능을 모두 사용할 수 있다.
+2. 실제 7개의 기능 중 일부만 사용이 가능하다
+
+많은 기능 중 일부 메서드 사용 가능
+많은 메서드 중 적은 기능이 있을시 프로그램 에러발생
+* 적은 기능에서 더 많은 기능을 사용하는 것은 프로그램 상 에러 발생
+
+5개의 버튼이 있는 부모 리모콘, 자식 기능이 7개 => 가능
+7개의 버튼이 있는 부모 리모콘, 자식 기능이 5개 => 불가능
+ 
+TV 리모콘 기능 : 		5개
+smartTV 리모콘 기능 : 	7개
+=> smartTV 리모콘으로 TV 리모콘 사용 가능 / (O) Tv t = new SmartTV();
+=> TV 리모콘으로 smartTV 리모콘 사용 불가 / (X) SmartTV t = new TV();
+
+TV t 	= new SmartTV();
+조상 		= 자손();
