@@ -1,0 +1,38 @@
+참조변수의 형변환
+- 사용할 수 있는 멤버의 개수를 조절하는 것
+- 부모, 자식 관계의 참조변수는 서로 형변환이 가능하다.
+
+class Car {}
+class FireEngine extends Car {}
+class Ambulance extends Car {}
+
+class Car {
+	String color;
+	int door;
+	
+	void drive() {
+	// 생략
+	}
+	
+	void stop() {
+	// 생략
+	}
+}
+
+class FireEngine extends Car {
+	void water() {
+	// 생략
+	}
+}
+
+기존에 계속 사용했던 방식 : 타입이 일치했음
+FireEngine f = new FireEngine();
+
+조상클래스, 자식클래스의 참조변수들은 서로 형변환이 가능하다.
+또한 멤버의 갯수를 계속 조절 할 수 있다.
+Car c = (Car)f;
+FireEngine f2 = (FireEngine)c;
+
+** Car의 기능 4개 / FireEngine의 기능 5개
+	Car c = (Car)f; 의 경우 기능 4개 갯수 수정 가능
+	ireEngine f2 = (FireEngine)c; 4개에서 5개로 기능 수정 가능

@@ -1,0 +1,41 @@
+인터페이스(interface)
+- 추상 메서드의 집합
+- 구현된 것이 전혀 없는 설계도 껍데기 (모든 멤버가 public)
+
+* 추상클래스와 인터페이스의 차이점
+	추상클래스 : 일반클래스, 추상메서드를 가지고 있음
+	인터페이스 : 추상메서드만 가지고 있다. / iv(변수)가 없음
+	
+interface 인터페이스이름 {
+	public static final 타입 상수이름 = 값; // 상수
+	public astract 메서드이름(매개변수목록);
+}
+
+인터페이스의 모든 상수들은 public, static, final을 가지고 있다.
+-> public, static, final 중 일부 또는 전체 생략가능
+
+	public static final int SPADE = 4;
+	final int DIAMOND = 3; 	// public static final int DIAMOND;
+	static int HEART = 2;	// public static final int HEART;
+	int CLOVER = 1;			// public static final iint CLOVER;
+
+인터페이스의 모든 메서드들은 public이고 abstract이다.
+-> public abstract 중 일부 또는 전체 생략가능
+
+	public abstract String getCardNumber();
+	== String getCardNumber(); 
+	
+interface의 조상은 Object가 아님
+interface의 조상은 interface
+
+인터페이스는 다중 상속이 가능하다.
+	interface fightable extends Movable, Attackable {
+	}
+	
+	interface Movable {
+		void move(int x, int y);
+	}
+	
+	interface Attackable {
+		void attack(Unit u);
+	}
